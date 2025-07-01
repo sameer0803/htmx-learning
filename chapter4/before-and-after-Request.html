@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+ <script src="https://unpkg.com/htmx.org@1.9.10"></script>
+  <script>
+        htmx.on("htmx:beforeRequest", (evt) => {
+       alert("Request Is about to trigger");
+            console.log("htmx:beforeRequest event triggered");
+            console.log("Target element:", evt.detail.requestConfig.target);
+            // console.log("Request details:", evt.detail.xhr);
+        });
+        htmx.on("htmx:afterRequest", (evt) => {
+              alert("Request Is baout to trigger");
+            console.log("htmx:afterRequest event triggered");
+            console.log("Target element:", evt.detail.headers);
+            // console.log("Swapped content:", evt.detail.xhr.responseText);
+        });
+    </script>
+  </head>
+  <body>
+  
+    <button
+      hx-post="http://localhost:1330/messages2"
+      hx-target="#destination"
+         >
+      Load Content
+    </button>
+
+    <div id="destination"></div>
+  </body>
+</html>

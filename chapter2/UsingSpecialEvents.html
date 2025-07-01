@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/htmx.org@1.9.10"></script>
+    <style>
+
+        #scrollme{
+            margin-top: 1100px;
+            color:white;
+            height: 150px;
+            width: 300px;
+            background-color: black;
+
+           
+        }
+        </style>
+</head>
+<body>
+
+    <!-- <div 
+     hx-get="http://localhost:1330/"
+     hx-trigger="load"
+     hx-target="#response">Fire as the page loads
+     </div>-->
+   <div 
+     hx-get="http://localhost:1330/"
+     hx-target="#response"
+     hx-trigger= "intersect threshold:0.7" id ="scrollme">
+     Fire when I revealed 
+     </div>
+
+        <div id="response"></div> 
+    
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+ <script src="https://unpkg.com/htmx.org@1.9.10"></script>
+  <script>
+        htmx.on("htmx:responseError", (evt) => {
+            console.log("Error:", evt.detail);
+            console.log(evt);
+            alert("Request failed with status: " + evt.detail.xhr.status);
+            console.log("htmx:responseerror event triggered");
+            console.log("Error details:", evt.detail.xhr.responseText);
+            console.log("Response status:", evt.detail.xhr.status);
+        });
+     
+    </script>
+  </head>
+  <body>
+  
+    <button
+      hx-post="http://localhost:1330/messag"
+      hx-target="#destination"
+         >
+      Load Content
+    </button>
+
+    <div id="destination"></div>
+  </body>
+</html>

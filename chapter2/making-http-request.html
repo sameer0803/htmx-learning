@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Making HTTP ReQuest</title>
+    <script src="https://unpkg.com/htmx.org@1.9.10"></script>
+  </head>
+  <body>
+    <form action="submitttt">
+      <input type="email" name="email" placeholder="Enter your name" />
+      <input type="password" name="pass" placeholder="Enter your email" />
+
+      <button
+        type="button"
+        id="submitttt"
+        hx-post="http://localhost:1330/echopayload"
+        hx-target="#response"
+      >
+        Submit
+      </button>
+    </form>
+
+    <div id="response">Response will be shown here</div>
+  </body>
+</html>

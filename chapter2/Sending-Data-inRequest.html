@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Making HTTP ReQuest</title>
+    <script src="https://unpkg.com/htmx.org@1.9.10"> </script>
+    <script>
+
+ getPassword =() => {
+      return "sameer123";
+    };
+    function getEmail(){
+      return "sameer123@gmail.com";
+    };
+    </script>
+
+  </head>
+  <body>
+    <!-- <form action="submitttt">
+      <input type="email" name="email" placeholder="Enter your name" />
+      <input type="password" name="pass" placeholder="Enter your email" />
+
+      <button
+        type="button"
+        id="submitttt"
+        hx-post="http://localhost:1330/echopayload"
+        hx-target="#response"
+      >
+        Submit
+      </button>
+    </form> -->
+
+    <!-- <button
+      type="button"
+      hx-post="http://localhost:1330/echopayload"
+      hx-target="#response"
+      hx-vals='{
+          "email":  "sameer.uddin@gmail.com",
+          "pass": "sameer123"}'
+    >
+      Submit
+    </button> -->
+
+        <!-- <button
+      type="button"
+      hx-post="http://localhost:1330/echopayload"
+      hx-target="#response"
+      hx-vals='js:{
+          "email":  getEmail(),
+          "pass": getPassword()}'
+    >
+      Submit
+    </button> -->
+
+    <button
+
+      hx-post="http://localhost:1330/echopayload"
+      hx-target="#response"
+      hx-include="#myID"
+     
+    >
+      Submit
+    </button>
+
+    <input type="text" id="myID" name="email" >
+
+    <div id="response">Response will be shown here</div>
+  </body>
+</html>

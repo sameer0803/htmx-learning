@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cancelling Requests</title>
+    <script src="https://unpkg.com/htmx.org@1.9.10"></script>
+  </head>
+  <body>
+    <button type="button" hx-get="http://localhost:1330/" id="request1">
+      Message Sent
+    </button>
+    <button type="button" onclick="htmx.trigger('#request1','htmx:abort')">
+      Cancel Message Sent
+    </button>
+  </body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Request Interceptors</title>
+ <script src="https://unpkg.com/htmx.org@1.9.10"></script>
+  <script>
+    htmx.on("htmx:configRequest", (evt) => {
+      console.log("htmx:config event triggered");
+      console.log("Request configuration:", evt.detail.headers);
+      event.detail.headers["Authorization"]="Bearer 79747789995";
+       event.detail.parameters["API_KEY"]="djbndklndkndkik";
+        event.detail.parameters["user"]="sameer";
+         event.detail.parameters["type"]="UPI";
+
+    });
+     
+        
+     
+    </script>
+  </head>
+  <body>
+  
+    <button
+      hx-post="http://localhost:1330/messages2"
+      hx-target="#destination"
+         >
+      Load Content
+    </button>
+
+    <div id="destination"></div>
+  </body>
+</html>

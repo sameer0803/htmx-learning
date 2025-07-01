@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   <script src="https://unpkg.com/htmx.org@1.9.10"></script>
+</head>
+<body> 
+
+<button id="FirstButton" hx-get="http://localhost:1330/" hx-target="#target1">First Request</button>
+
+<button id="SecondButton"  hx-post="http://localhost:1330/messages2" hx-target="#target2" hx-sync="#FirstButton:replace">Next Request</button>
+
+<div id="target1">
+    <b>Target 1</b>
+</div>
+
+<div id="target2">
+    <b>Target 2</b>
+</div>
+         
+</body>
+</html>

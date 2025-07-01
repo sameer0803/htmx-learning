@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Browser History</title>
+<script src="https://unpkg.com/htmx.org@1.9.10"></script>
+<script> htmx.config.allowScriptTags=false;
+ htmx.config.allowEval=false;
+ htmx.config.selfRequestsOnly=true;
+
+</script>
+</head>
+<body>
+
+    
+    <button type="button"
+     hx-post="http://localhost:1330/script" 
+     hx-target="#destination">
+        Load Stuff
+    </button>
+    <div id="destination" hx-history="false"></div>
+   
+</body>

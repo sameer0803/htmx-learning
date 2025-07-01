@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OutofBoundSwaps</title>
+ <script src="https://unpkg.com/htmx.org@1.9.10"></script>
+  </head>
+  <body>
+    <button hx-post="http://localhost:1330/messages3" 
+            hx-target="#maintarget"
+            hx-swap="outerHTML"
+           >
+        Load Content
+    </button>
+
+    <div id="maintarget">Main target</div>
+    
+   
+    <div id="SomeContent">Some Content</div>
+    
+    <div id="target2">target2</div>
+  
+      
+  </body>
+</html>

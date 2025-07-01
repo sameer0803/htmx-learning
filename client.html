@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <input type="text" id="msg" placeholder="Type a message" />
+  <button onclick="sendMessage()">Send</button>
+  <div id="target2"></div>
+
+  <script>
+    const socket = new WebSocket("ws://localhost:5000");
+
+    socket.onopen = () => {
+      console.log("Connected to WebSocket server");
+    };
+
+    socket.onmessage = (event) => {
+      document.getElementById("target2").innerHTML = event.data;
+    };
+
+    function sendMessage() {
+      const message = document.getElementById("msg").value;
+      socket.send(JSON.stringify({ chat_message: message }));
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trigger Modifier</title>
+       <script src="https://unpkg.com/htmx.org@1.9.10"></script>
+</head>
+<body>
+    
+    <!-- <div hx-post="http://localhost:1330/messages" hx-trigger="mouseenter once">Make POST Request</div> -->
+     <div hx-post="http://localhost:1330/messages" hx-trigger="click from:#requestTrigget">Make DELAYED Request</div> 
+
+     <button type="button" id="requestTrigget">Submit</button>
+</body>
+</html>
